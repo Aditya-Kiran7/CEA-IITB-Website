@@ -4,7 +4,7 @@ import os
 BASE_URL = "https://www.civil.iitb.ac.in/cea/#/cea/verify?id="
 
 INPUT_FILE = "src/data/certificate.js"
-OUTPUT_FOLDER = "QR_Codes"
+OUTPUT_FOLDER = "public/QR_Codes"
 
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 

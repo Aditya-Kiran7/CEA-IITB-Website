@@ -1,7 +1,7 @@
 import csv
 import os
 
-CSV_FOLDER = "certificateCSV"
+CSV_FOLDER = "public/certificateCSV"
 OUTPUT_FILE = "src/data/certificate.js"
 
 EVENTS = {
