@@ -1,0 +1,260 @@
+.sec-container {
+  padding: 80px 80px;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.sec-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-section {
+  max-width: 45%;
+}
+
+.text-section h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2;
+  position: relative;
+}
+
+
+
+.accent-lines {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #00a2ff;
+  border-radius: 50%;
+  position: absolute;
+  left: 100%;
+  top: 20%;
+  transform: translateX(-50%);
+}
+
+.text-section p {
+  margin-top: 10px;
+  font-size: 1.3rem;
+  color: #020202ba;
+}
+
+.text-section h1{
+  font-size: 4.1rem;
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+.buttons button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.instagram-btn {
+  background-color: #3ec8d7;
+  color: white;
+}
+
+.instagram-btn {
+  background: linear-gradient(45deg, #ffbc05, #dd2a7b, #8134af, #515bd4);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-position 0.5s ease;
+  background-size: 300% 300%;
+  animation: gradientShift 4s ease infinite;
+}
+
+.instagram-btn:hover {
+  background-position: 100% 0;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.instagram-btn:hover {
+  background-color: #2d4373;
+}
+
+.youtube-btn {
+  background: linear-gradient(45deg, #ffa7a7, #cc0000, #00886f);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-size: 200% 200%;
+  animation: youtubeShift 3s ease infinite;
+  transition: background-position 0.3s ease;
+}
+
+.youtube-btn:hover {
+  background-position: 100% 100%;
+}
+
+@keyframes youtubeShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.youtube-btn:hover {
+  background-color: #b0e64f;
+}
+
+.image-section {
+  position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-image {
+  width: 300px;
+  height: 300px;
+  background-color: #eaeaea;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-placeholder {
+  font-size: 1rem;
+  color: #777;
+}
+
+.thought-bubbles {
+  position: absolute;
+}
+
+.bubble {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bubble-left {
+  top: -20px;
+  left: -40px;
+  background-color: #bffb7a;
+}
+
+.bubble-right {
+  top: 40px;
+  right: -40px;
+  background-color: #7acbff;
+}
+
+.bubble-image {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* ----------  Responsive  ---------- */
+@media (max-width: 1024px) {
+  .sec-container {
+    padding: 60px 40px;
+  }
+
+  .text-section h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sec-container {
+    padding: 48px 24px;
+  }
+
+  .sec-content {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .text-section {
+    max-width: 100%;
+  }
+
+  .text-section h1 {
+    font-size: 2.4rem;
+  }
+
+  .text-section p {
+    font-size: 1.1rem;
+  }
+
+  .image-section {
+    width: 100%;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .buttons button {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .sec-container {
+    padding: 36px 16px;
+  }
+
+  .text-section h1 {
+    font-size: 2rem;
+  }
+
+  .main-image {
+    width: 240px;
+    height: 240px;
+  }
+
+  .bubble {
+    width: 80px;
+    height: 80px;
+  }
+}

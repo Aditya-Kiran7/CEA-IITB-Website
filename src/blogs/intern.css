@@ -1,0 +1,144 @@
+.blog-wrapper {
+  max-width: 1500px;
+}
+
+.blog-main-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.blog-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.blog-author-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
+}
+
+.blog-author-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fca311;
+}
+
+.blog-date {
+  font-size: 0.85rem;
+  color: #000000;
+}
+
+.blog-hero-img {
+  display: block;          
+  margin: 0 auto 2rem;     
+  max-width: 100%;         
+  height: auto;            
+  max-height: 400px;       
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.blog-content {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.blog-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.blog-quote {
+  background: #f2f2f2;
+  border-left: 4px solid #1a1a1a;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #444;
+  border-radius: 8px;
+}
+
+.blog-list {
+  margin-left: 1.5rem;
+  color: #555;
+}
+
+.blog-list li {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .blog-main-title {
+    font-size: 2rem;
+  }
+  .blog-hero-img {
+    max-height: 250px;
+  }
+}
+
+/* =====================================================================
+   DARK BRAND THEME FOR BLOG PAGES (matches the home page & other pages)
+   Overrides the light .page-bg / .main-white-container so every blog uses
+   the same deep-navy background with a glass content panel.
+   ===================================================================== */
+.page-bg:has(.blog-wrapper) {
+  background-color: #0B0C1E;
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(168, 85, 247, 0.18) 0%, transparent 40%),
+    radial-gradient(circle at 85% 100%, rgba(0, 210, 255, 0.12) 0%, transparent 45%);
+}
+
+.main-white-container.blog-wrapper {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #cbd5e0;
+}
+
+.blog-wrapper .blog-main-title {
+  background: linear-gradient(to right, #a855f7, #d946ef, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.blog-wrapper .blog-section-title {
+  color: #ffffff;
+}
+
+.blog-wrapper .blog-content {
+  color: #cbd5e0;
+}
+
+.blog-wrapper .blog-date {
+  color: #9ca3af;
+}
+
+.blog-wrapper .blog-list {
+  color: #cbd5e0;
+}
+
+.blog-wrapper .blog-quote {
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 4px solid #a855f7;
+  color: #cbd5e0;
+}
+
+.blog-wrapper .blog-author-img {
+  border-color: rgba(255, 255, 255, 0.15);
+}

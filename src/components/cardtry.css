@@ -1,0 +1,246 @@
+/* ================================= */
+/* TEAM CARD STYLES (Responsive) */
+/* ================================= */
+
+.team-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8e8e8;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  width: 100%;             /* <- Fills its parent (.card) */
+  height: 100%;            /* Matches parent height if needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* Animate on load */
+.team-card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+
+.avatar-container {
+  position: relative;
+  display: inline-block;
+}
+
+.team-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #f8f9fa;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.avatar-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.team-card:hover .avatar-overlay {
+  opacity: 1;
+}
+
+.team-card:hover .team-avatar {
+  transform: scale(1.05);
+}
+
+.card-content {
+  text-align: center;
+}
+
+.team-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.3rem;
+  word-break: break-word;
+}
+
+/* ===================================== */
+/* DESIGNATION FIX: SINGLE LINE ELLIPSIS */
+/* ===================================== */
+/* .team-designation {
+  font-size: 0.95rem;
+  color: #4f46e5;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: block;
+} */
+
+.team-designation {
+  font-size: 0.95rem;
+  color: #4f46e5;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  /* Remove these lines if present: */
+  /* white-space: nowrap; */
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis; */
+  word-break: break-word;
+  display: block;
+}
+
+/* CONTACT DETAILS */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+}
+
+.contact-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.contact-icon {
+  color: #4f46e5;
+  flex-shrink: 0;
+}
+
+.contact-link {
+  color: #374151;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  display: block;
+}
+
+.contact-link:hover {
+  color: #4f46e5;
+}
+
+/* DESCRIPTION */
+.description-section {
+  text-align: center;
+  margin-top: auto;
+}
+
+.team-description {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+  word-break: break-word;
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: #4f46e5;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0;
+}
+
+.read-more-btn:hover {
+  color: #3730a3;
+}
+
+/* ================================= */
+/* ✅ RESPONSIVE ADJUSTMENTS */
+/* ================================= */
+@media (max-width: 768px) {
+  .team-card {
+    padding: 1.2rem;
+  }
+
+  .team-name {
+    font-size: 1.3rem;
+  }
+
+  .team-designation {
+    font-size: 0.9rem;
+    white-space: normal; /* Allow wrap */
+  }
+
+  .contact-link {
+    font-size: 0.88rem;
+    max-width: 100%;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-card {
+    padding: 1rem;
+  }
+
+  .team-avatar {
+    width: 90px;
+    height: 90px;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .read-more-btn {
+    font-size: 0.85rem;
+  }
+}
+
+@media print {
+  .team-card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+  .read-more-btn {
+    display: none;
+  }
+}

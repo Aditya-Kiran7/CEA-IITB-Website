@@ -1,0 +1,37 @@
+/* 1. Import Raleway only from Google Fonts */
+/* Includes weights: 300 (light), 400 (regular), 700 (bold), 900 (black) */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+
+/* 2. Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3. Global Overrides */
+@layer base {
+  /* This forces every element (including buttons/inputs) to use Raleway */
+  *, ::before, ::after {
+    font-family: 'Raleway', sans-serif !important;
+  }
+
+  html, body {
+    @apply bg-[#0d0d12] text-white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Responsive safety net: images never overflow their container on any device */
+  img {
+    max-width: 100%;
+  }
+
+  /* Headings now use Raleway Bold */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+
+  /* Updated helper class name for clarity */
+  .font-accent {
+    @apply font-black; /* Uses the 900 weight for a very heavy look */
+  }
+}

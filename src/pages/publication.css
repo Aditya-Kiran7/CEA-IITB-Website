@@ -1,0 +1,323 @@
+/* --- Variables & Reset (brand tokens, aligned with the home page) --- */
+:root {
+  --bg-dark: #0B0C1E;
+  --text-white: #ffffff;
+  --text-dim: #9ca3af;
+  --neon-cyan: #00d2ff;
+  --neon-purple: #a855f7;
+  --neon-pink: #ec4899;
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --font-tech: 'Courier New', Courier, monospace; 
+}
+
+/* "More coming soon" note so the page never looks empty with few items */
+.pub-coming-soon {
+  max-width: 700px;
+  margin: 3rem auto 0;
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+.pub-coming-soon em {
+  color: var(--neon-cyan);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.publication-container {
+  background-color: var(--bg-dark);
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text-white);
+  padding: 7rem 1.5rem 5rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background Grid */
+.bgGrid {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: 
+    linear-gradient(rgba(0, 243, 255, 0.3) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(0, 243, 255, 0.3) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 0;
+}
+
+.content-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Header --- */
+.pub-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.back-btn {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--neon-cyan);
+  border: 1px solid var(--neon-cyan);
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  font-family: var(--font-tech);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.back-btn:hover {
+  background: var(--neon-cyan);
+  color: #000;
+  box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+.pub-heading {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: -1px;
+  color: white;
+}
+
+.neon-text {
+  color: transparent;
+  background: linear-gradient(to right, var(--neon-cyan), var(--neon-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 0 10px rgba(0, 243, 255, 0.4));
+}
+
+.header-bar {
+  width: 100px;
+  height: 4px;
+  background: var(--neon-purple);
+  margin: 1rem 0;
+  border-radius: 2px;
+  box-shadow: 0 0 10px var(--neon-purple);
+}
+
+.pub-subtitle {
+  font-family: var(--font-tech);
+  color: var(--text-dim);
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+
+/* --- Publication Card --- */
+.publication-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.pub-card {
+  display: flex;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.pub-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--neon-purple);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Image Section */
+.pub-image-wrapper {
+  flex: 0 0 320px; /* Fixed width for image container */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  padding: 1rem;
+}
+
+.glow-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0, 243, 255, 0.15), transparent 70%);
+  z-index: 1;
+}
+
+.pub-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  transition: transform 0.5s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.pub-card:hover .pub-image {
+  transform: scale(1.05) rotate(1deg);
+  border-color: var(--neon-cyan);
+}
+
+/* Tech decoration */
+.tech-corner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, transparent 50%, var(--neon-purple) 50%);
+  opacity: 0.5;
+  z-index: 3;
+}
+
+/* Content Section */
+.pub-content {
+  flex: 1;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pub-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.badge-edition {
+  background: rgba(176, 38, 255, 0.1);
+  color: var(--neon-purple);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-family: var(--font-tech);
+  font-weight: 700;
+  font-size: 0.8rem;
+  border: 1px solid rgba(176, 38, 255, 0.3);
+}
+
+.badge-type {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.pub-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-white);
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+}
+
+.pub-desc {
+  color: #b0b8c4;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 90%;
+}
+
+/* Cyber Button */
+.cyber-btn {
+  display: inline-flex;
+  position: relative;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.btn-content {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: transparent;
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  padding: 1rem 2.5rem;
+  font-weight: 700;
+  font-family: var(--font-tech);
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.cyber-btn:hover .btn-content {
+  background: var(--neon-cyan);
+  color: #000;
+  box-shadow: 0 0 20px var(--neon-cyan);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .pub-card {
+    flex-direction: column;
+  }
+  
+  .pub-image-wrapper {
+    flex: none;
+    width: 100%;
+    padding: 2rem;
+    background: linear-gradient(to bottom, #000, transparent);
+  }
+
+  .pub-image {
+    max-height: 300px;
+  }
+
+  .pub-content {
+    padding: 2rem;
+  }
+
+  .pub-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .pub-heading {
+    font-size: 2.5rem;
+  }
+  
+  .pub-title {
+    font-size: 1.8rem;
+  }
+  
+  .pub-desc {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,227 @@
+.teamCard {
+  /* Dark theme background */
+  background: #2d014f;
+  border-radius: 24px;
+  /* Neon pink border */
+  border: 2px solid #ff4dff;
+  /* Neon glow shadow */
+  box-shadow: 0 0 20px rgba(217, 70, 239, 0.5), inset 0 0 10px rgba(217, 70, 239, 0.1);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  animation: fadeIn 0.5s ease-out;
+  color: #ffffff;
+}
+
+.teamCard:hover {
+  transform: translateY(-8px);
+  /* Intensified glow on hover */
+  box-shadow: 0 15px 35px rgba(217, 70, 239, 0.8), inset 0 0 20px rgba(217, 70, 239, 0.3);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+
+.avatarContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.teamAvatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  /* Pink border matching theme */
+  border: 3px solid #ff4dff;
+  box-shadow: 0 0 15px rgba(217, 70, 239, 0.6);
+  transition: all 0.3s ease;
+}
+
+.avatarOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Subtle purple overlay on hover */
+  background: rgba(217, 70, 239, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show overlay only on hover */
+.teamCard:hover .avatarOverlay {
+  opacity: 1;
+}
+
+.teamCard:hover .teamAvatar {
+  transform: scale(1.05);
+}
+
+.cardContent {
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.teamName {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.4rem;
+  word-break: break-word;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+/* DESIGNATION */
+.teamDesignation {
+  font-size: 0.95rem;
+  /* Neon Purple/Pink color */
+  color: #e879f9;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  display: block;
+  word-break: break-word;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  /* Removed the gray background box for cleaner dark theme look */
+  background: transparent;
+  border-radius: 12px;
+  border: none;
+}
+
+.contactItem {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  text-align: center;
+}
+
+.contactIcon {
+  /* Pink icon color */
+  color: #ff4dff;
+  flex-shrink: 0;
+}
+
+.contactLink {
+  /* Light gray text for readability against dark background */
+  color: #d1d5db;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  display: block;
+  transition: color 0.2s;
+}
+
+.contactLink:hover {
+  /* Hover color matching theme */
+  color: #ff4dff;
+}
+
+.descriptionSection {
+  text-align: center;
+  margin-top: auto;
+}
+
+.teamDescription {
+  font-size: 0.9rem;
+  /* Light gray text */
+  color: #d1d5db;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+  word-break: break-word;
+}
+
+.readMoreBtn {
+  background: none;
+  border: none;
+  /* Neon Purple/Pink color */
+  color: #e879f9;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0;
+  transition: color 0.2s;
+}
+
+.readMoreBtn:hover {
+  color: #ff4dff;
+}
+
+@media (max-width: 768px) {
+  .teamCard {
+    padding: 1.2rem;
+  }
+  .teamName {
+    font-size: 1.3rem;
+  }
+  .teamDesignation {
+    font-size: 0.9rem;
+  }
+  .contactLink {
+    font-size: 0.88rem;
+    max-width: 100%;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  .teamCard {
+    padding: 1.5rem 1rem;
+  }
+  .teamAvatar {
+    width: 100px;
+    height: 100px;
+  }
+  .contactItem {
+    /* Keep on same line if possible on small screens, looks better */
+    flex-direction: row; 
+    align-items: center;
+  }
+  .readMoreBtn {
+    font-size: 0.85rem;
+  }
+}
